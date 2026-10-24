@@ -211,7 +211,7 @@ home = f"""
   <div class="section-head"><div class="eyebrow">Our partners</div><h2>Thank you to our sponsors</h2><p>Local businesses make affordable, well-run golf possible on the Gulf Coast.</p></div>
   <div class="sponsors">
     <a class="sponsor" href="{GALLERIA}"><small>Title Sponsor · 2026 Coast Open</small><img src="assets/galleria-bmw-gray.png" alt="Galleria BMW"></a>
-    <a class="sponsor" href="{NEWKS}"><small>Coastal Junior Tour</small><img src="assets/newks-eatery.png" alt="Newk's Eatery"></a>
+    <a class="sponsor" href="{NEWKS}"><small>Title Sponsor · Coastal Junior Tour</small><img src="assets/newks-eatery.png" alt="Newk's Eatery"></a>
     <a class="sponsor" href="{NEOGOLF}"><small>Coastal Junior Tour</small><img src="assets/neogolf.png" alt="NeoGolf" style="height:48px"></a>
     <a class="sponsor" href="mailto:{EMAIL}?subject=Sponsoring%20the%20Coastal%20Golf%20Association"><small>Become a sponsor</small><b>Your business here</b></a>
   </div>
@@ -367,7 +367,7 @@ cjt = f"""
 <section id="sponsors"><div class="wrap">
   <div class="section-head"><div class="eyebrow">Thank you</div><h2>Junior Tour sponsors</h2><p>Interested in supporting junior golf on the Gulf Coast? Email us and we'll send sponsorship information.</p></div>
   <div class="sponsors">
-    <a class="sponsor" href="{NEWKS}"><small>Junior Tour sponsor</small><img src="../assets/newks-eatery.png" alt="Newk's Eatery"></a>
+    <a class="sponsor" href="{NEWKS}"><small>Title Sponsor · Coastal Junior Tour</small><img src="../assets/newks-eatery.png" alt="Newk's Eatery"></a>
     <a class="sponsor" href="{NEOGOLF}"><small>Junior Tour sponsor</small><img src="../assets/neogolf.png" alt="NeoGolf" style="height:48px"></a>
     <a class="sponsor" href="mailto:{EMAIL}?subject=Coastal%20Junior%20Tour%20sponsorship"><small>Become a sponsor</small><b>Your business here</b></a>
   </div>
