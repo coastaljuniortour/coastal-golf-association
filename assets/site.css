@@ -134,3 +134,4 @@ footer a{color:var(--muted)}
 .person .headshot{width:104px;height:104px}
 .prog-logo img{max-height:60px}
 @media(max-width:480px){.card.person{flex-direction:column;align-items:flex-start}}
+.hero-emblem{overflow:hidden;border:6px solid rgba(243,244,213,.25);background-clip:padding-box}.hero-emblem img{width:72%}
