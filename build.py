@@ -118,7 +118,7 @@ def contact_block(pre):
 
 # ---------------- HOME ----------------
 home = f"""
-<section class="hero" style="padding:0">{CONTOURS}<div class="wrap">
+<section class="hero hero-course" style="padding:0"><div class="wrap">
   <div>
     <div class="eyebrow">Mississippi Gulf Coast Championship Golf</div>
     <h1>Golf on the Gulf Coast, run by PGA Professionals.</h1>
@@ -142,11 +142,22 @@ home = f"""
     <p>From a juniors' first tournament to a professional purse, every CGA program is organized and run by PGA Professionals.</p>
   </div>
   <div class="grid g4">
-    <div class="card feature"><div class="tag" style="color:#F4B596">Championship</div><h3>The Coast Open</h3><p>Our annual championship at Sunkist Country Club, with a professional purse and divisions for amateurs, seniors and juniors.</p><a class="more" href="coast-open/index.html">Coast Open</a></div>
-    <div class="card"><div class="tag">Juniors</div><h3>Coastal Junior Tour</h3><p>Affordable, competitive tournaments for boys and girls at courses across the Gulf Coast, played under USGA rules.</p><a class="more" href="junior-tour/index.html">Junior Tour</a></div>
-    <div class="card"><div class="tag">Juniors</div><h3>PGA Jr. League</h3><p>Team golf for kids, with coaching from PGA Professionals and matches against other teams.</p><a class="more" href="#contact">Ask about teams</a></div>
-    <div class="card"><div class="tag">Veterans</div><h3>PGA HOPE</h3><p>The PGA of America's golf program for military veterans, introducing golf to support physical, mental and social well-being.</p><a class="more" href="#contact">Get involved</a></div>
+    <div class="card feature"><div class="prog-logo"><img src="assets/coast-open-logo.png" alt="Coast Open logo"></div><div class="tag" style="color:#F4B596">Championship</div><h3>The Coast Open</h3><p>Our annual championship at Sunkist Country Club, with a professional purse and divisions for amateurs, seniors and juniors.</p><a class="more" href="coast-open/index.html">Coast Open</a></div>
+    <div class="card"><div class="prog-logo"><img src="assets/logo-cjt.png" alt="Coastal Junior Tour logo"></div><div class="tag">Juniors</div><h3>Coastal Junior Tour</h3><p>Affordable, competitive tournaments for boys and girls at courses across the Gulf Coast, played under USGA rules.</p><a class="more" href="junior-tour/index.html">Junior Tour</a></div>
+    <div class="card"><div class="prog-logo"><img src="assets/logo-pga-jr-league.png" alt="PGA Jr. League logo"></div><div class="tag">Juniors</div><h3>PGA Jr. League</h3><p>Team golf for kids, with coaching from PGA Professionals and matches against other teams.</p><a class="more" href="#contact">Ask about teams</a></div>
+    <div class="card"><div class="prog-logo"><img src="assets/logo-pga-hope.png" alt="PGA HOPE logo"></div><div class="tag">Veterans</div><h3>PGA HOPE</h3><p>The PGA of America's golf program for military veterans, introducing golf to support physical, mental and social well-being.</p><a class="more" href="#contact">Get involved</a></div>
   </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="section-head"><div class="eyebrow">On the course</div><h2>Gulf Coast golf, every age and level</h2><p>Scenes from CGA events and rounds at courses across the Mississippi Gulf Coast.</p></div>
+  <div class="gallery">
+    <figure><img loading="lazy" src="assets/photos/adult-drive.jpg" alt="A golfer setting up to drive down a tree-lined fairway"></figure>
+    <figure><img loading="lazy" src="assets/photos/course-pond.jpg" alt="Golfers on a green beside a pond, framed by tall pines"></figure>
+    <figure><img loading="lazy" src="assets/photos/adult-green.jpg" alt="A golfer marking his ball on the green"></figure>
+    <figure><img loading="lazy" src="assets/photos/junior-green.jpg" alt="A junior golfer putting during a Coastal Junior Tour event"></figure>
+  </div>
+  <p class="note" style="margin-top:14px">More photos and videos on <a href="{IG}">Instagram</a> and <a href="{FB}">Facebook</a>.</p>
 </div></section>
 
 <section id="about"><div class="wrap">
@@ -158,8 +169,8 @@ home = f"""
       <p>Today the CGA brings the Junior Tour, PGA Jr. League, PGA HOPE and the Coast Open together under one association.</p>
     </div>
     <div class="grid" style="gap:16px">
-      <div class="card person"><div class="ini">AM</div><div><h3>Allan Martel, PGA</h3><div class="role">Co-Founder · Tournament Director</div><p style="margin:0">PGA Class A Professional and owner of NeoGolf in D'Iberville and Ocean Springs.</p></div></div>
-      <div class="card person"><div class="ini">RN</div><div><h3>Rory Nelson, PGA</h3><div class="role">Co-Founder · Tournament Director</div><p style="margin:0">PGA Professional and General Manager of Sunkist Country Club.</p></div></div>
+      <div class="card person"><img class="headshot" src="assets/allan-martel.jpg" alt="Allan Martel, PGA"><div><h3>Allan Martel, PGA</h3><div class="role">Co-Founder · Tournament Director</div><p style="margin:0">PGA Class A Professional and owner of NeoGolf in D'Iberville and Ocean Springs.</p></div></div>
+      <div class="card person"><img class="headshot" src="assets/rory-nelson.jpg" alt="Rory Nelson, PGA"><div><h3>Rory Nelson, PGA</h3><div class="role">Co-Founder · Tournament Director</div><p style="margin:0">PGA Professional and General Manager of Sunkist Country Club.</p></div></div>
     </div>
   </div>
 </div></section>
