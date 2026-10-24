@@ -128,17 +128,11 @@ home = f"""
       <a class="btn btn-ghost" href="#programs" style="color:var(--cream)">See our programs</a>
     </div>
   </div>
-  <div class="hero-photo"><img src="assets/photos/cjt-01.jpg" alt="A junior golfer on the course at a Coastal Junior Tour event"><span class="badge"><img src="assets/cga-emblem.png" alt=""></span></div>
+  <div class="hero-emblem"><img src="assets/cga-emblem.png" alt="Coastal Golf Association emblem"></div>
 </div></section>
 
 <section><div class="wrap">
   {coast_band('')}
-</div></section>
-
-<section><div class="wrap">
-  <div class="section-head"><div class="eyebrow">On the course</div><h2>Moments from our events</h2><p>Scenes from Coastal Junior Tour events at Shell Landing, Windance and courses across the Gulf Coast.</p></div>
-  {gallery('', ACTION, 'Coastal Junior Tour players during an event')}
-  <p class="note" style="margin-top:14px">More photos and videos on <a href="{IG}">Instagram</a> and <a href="{FB}">Facebook</a>.</p>
 </div></section>
 
 <section class="alt" id="programs"><div class="wrap">
@@ -291,10 +285,8 @@ cjt = f"""
 </div></section>
 
 <section><div class="wrap">
-  <div class="section-head"><div class="eyebrow">2026 season</div><h2>Our winners and players</h2><p>Medalists and action from the 2026 Coastal Junior Tour season.</p></div>
-  {gallery('../', WINNERS, 'Coastal Junior Tour medalists')}
-  <div style="height:14px"></div>
-  {gallery('../', ACTION[1:5], 'Coastal Junior Tour players during an event')}
+  <div class="section-head"><div class="eyebrow">2026 season</div><h2>Our winners and players</h2><p>Medalists and action from the 2026 Coastal Junior Tour season. More on <a href="{IG}">Instagram</a> and <a href="{FB}">Facebook</a>.</p></div>
+  {gallery('../', ['cjt-09','cjt-01','cjt-11','cjt-03'], 'Coastal Junior Tour players and medalists')}
 </div></section>
 
 <section class="alt" id="policies"><div class="wrap">
