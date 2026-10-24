@@ -12,6 +12,14 @@ GALLERIA = "https://www.galleriabmw.com/"
 FB = "https://www.facebook.com/profile.php?id=61590366791773"
 IG = "https://www.instagram.com/coastaljuniortour/"
 EMAIL = "coastaljuniortour@gmail.com"
+NEWKS = "https://newks.com/"
+NEOGOLF = "https://www.neogolfclub.com/"
+ACTION = ["cjt-01","cjt-02","cjt-03","cjt-04","cjt-05","cjt-06","cjt-07","cjt-08"]
+WINNERS = ["cjt-09","cjt-10","cjt-11","cjt-12"]
+
+def gallery(pre, names, alt):
+    return '<div class="gallery">' + "".join(f'<figure><img loading="lazy" src="{pre}assets/photos/{n}.jpg" alt="{alt}"></figure>' for n in names) + '</div>'
+
 
 CONTOURS = """<svg class="contours" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#F3F4D5" stroke-width="1.4">""" + "".join(
     f'<ellipse cx="{900}" cy="{330}" rx="{60+i*46}" ry="{36+i*30}" transform="rotate(-12 900 330)"/>' for i in range(14)
@@ -120,11 +128,17 @@ home = f"""
       <a class="btn btn-ghost" href="#programs" style="color:var(--cream)">See our programs</a>
     </div>
   </div>
-  <div class="hero-emblem"><img src="assets/cga-emblem.png" alt="Coastal Golf Association"></div>
+  <div class="hero-photo"><img src="assets/photos/cjt-01.jpg" alt="A junior golfer on the course at a Coastal Junior Tour event"><span class="badge"><img src="assets/cga-emblem.png" alt=""></span></div>
 </div></section>
 
 <section><div class="wrap">
   {coast_band('')}
+</div></section>
+
+<section><div class="wrap">
+  <div class="section-head"><div class="eyebrow">On the course</div><h2>Moments from our events</h2><p>Scenes from Coastal Junior Tour events at Shell Landing, Windance and courses across the Gulf Coast.</p></div>
+  {gallery('', ACTION, 'Coastal Junior Tour players during an event')}
+  <p class="note" style="margin-top:14px">More photos and videos on <a href="{IG}">Instagram</a> and <a href="{FB}">Facebook</a>.</p>
 </div></section>
 
 <section class="alt" id="programs"><div class="wrap">
@@ -160,7 +174,8 @@ home = f"""
   <div class="section-head"><div class="eyebrow">Our partners</div><h2>Thank you to our sponsors</h2><p>Local businesses make affordable, well-run golf possible on the Gulf Coast.</p></div>
   <div class="sponsors">
     <a class="sponsor" href="{GALLERIA}"><small>Title Sponsor · 2026 Coast Open</small><img src="assets/galleria-bmw-gray.png" alt="Galleria BMW"></a>
-    <a class="sponsor" href="junior-tour/index.html#sponsors"><small>Coastal Junior Tour</small><b>Newk's Eatery</b></a>
+    <a class="sponsor" href="{NEWKS}"><small>Coastal Junior Tour</small><img src="assets/newks-eatery.png" alt="Newk's Eatery"></a>
+    <a class="sponsor" href="{NEOGOLF}"><small>Coastal Junior Tour</small><img src="assets/neogolf.png" alt="NeoGolf" style="height:48px"></a>
     <a class="sponsor" href="mailto:{EMAIL}?subject=Sponsoring%20the%20Coastal%20Golf%20Association"><small>Become a sponsor</small><b>Your business here</b></a>
   </div>
 </div></section>
@@ -275,7 +290,14 @@ cjt = f"""
   </div>
 </div></section>
 
-<section id="policies"><div class="wrap">
+<section><div class="wrap">
+  <div class="section-head"><div class="eyebrow">2026 season</div><h2>Our winners and players</h2><p>Medalists and action from the 2026 Coastal Junior Tour season.</p></div>
+  {gallery('../', WINNERS, 'Coastal Junior Tour medalists')}
+  <div style="height:14px"></div>
+  {gallery('../', ACTION[1:5], 'Coastal Junior Tour players during an event')}
+</div></section>
+
+<section class="alt" id="policies"><div class="wrap">
   <div class="section-head"><div class="eyebrow">Resources</div><h2>Player and spectator guidelines</h2></div>
   <details><summary>Notice to players</summary><ol>
     <li>Practice rounds are available Monday–Wednesday after 1 p.m., based on availability.</li>
@@ -307,10 +329,11 @@ cjt = f"""
   </ul></details>
 </div></section>
 
-<section class="alt" id="sponsors"><div class="wrap">
+<section id="sponsors"><div class="wrap">
   <div class="section-head"><div class="eyebrow">Thank you</div><h2>Junior Tour sponsors</h2><p>Interested in supporting junior golf on the Gulf Coast? Email us and we'll send sponsorship information.</p></div>
   <div class="sponsors">
-    <div class="sponsor"><small>Junior Tour sponsor</small><b>Newk's Eatery</b></div>
+    <a class="sponsor" href="{NEWKS}"><small>Junior Tour sponsor</small><img src="../assets/newks-eatery.png" alt="Newk's Eatery"></a>
+    <a class="sponsor" href="{NEOGOLF}"><small>Junior Tour sponsor</small><img src="../assets/neogolf.png" alt="NeoGolf" style="height:48px"></a>
     <a class="sponsor" href="mailto:{EMAIL}?subject=Coastal%20Junior%20Tour%20sponsorship"><small>Become a sponsor</small><b>Your business here</b></a>
   </div>
 </div></section>

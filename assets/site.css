@@ -112,3 +112,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
 footer img{height:40px;width:auto}
 footer a{color:var(--muted)}
 .note{font-size:.88rem;color:var(--muted)}
+/* photos */
+.hero-photo{position:relative;justify-self:center;width:100%;max-width:460px;aspect-ratio:4/5;border-radius:22px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.hero-photo>img{width:100%;height:100%;object-fit:cover}
+.hero-photo .badge{position:absolute;left:18px;bottom:18px;width:84px;height:84px;border-radius:50%;background:var(--cream);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.hero-photo .badge img{width:74%}
+@media(max-width:860px){.hero-photo{max-width:100%;aspect-ratio:4/3;order:-1}}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gallery figure{margin:0;border-radius:12px;overflow:hidden;aspect-ratio:4/5;background:var(--sand)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.gallery figure:hover img{transform:scale(1.04)}
+@media(max-width:860px){.gallery{grid-template-columns:repeat(2,1fr)}}
+.sponsor img{max-width:220px;object-fit:contain}
