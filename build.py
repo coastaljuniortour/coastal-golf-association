@@ -14,6 +14,31 @@ IG = "https://www.instagram.com/coastaljuniortour/"
 EMAIL = "coastaljuniortour@gmail.com"
 NEWKS = "https://newks.com/"
 NEOGOLF = "https://www.neogolfclub.com/"
+ALLAN_PGA = "https://www.pga.com/coach/allanmartel"
+RORY_PGA = "https://www.pga.com/coach/rorynelson"
+JRL_SUNKIST = "https://www.pgajrleague.com/junior-league-events/search?radius=10&amp;type=facility&amp;label=Sunkist+Country+Club%2C+Biloxi%2C+MS&amp;lat=30.510988&amp;lng=-88.96808&amp;programStatus=all"
+HOPE_LINK = "https://www.pga.com/things-to-do/events/pga-hope-d-iberville-biloxi-fall-session"
+COURSES = [
+  # slug, name, city, url, logo bg ('navy' for white logos), note
+  ("sunkist", "Sunkist Country Club", "Biloxi", "https://sunkistcc.com/", "navy", "Home of the Coast Open, Coastal Junior Tour events and our PGA Jr. League teams, on the water at Back Bay."),
+  ("grand-bear", "Grand Bear Golf Club", "Saucier", "https://golfgrandbear.com/", "navy", "Jack Nicklaus signature design and a Coastal Junior Tour stop."),
+  ("diamondhead", "The Club at Diamondhead", "Diamondhead", "https://theclubatdiamondhead.com/", "navy", "Coastal Junior Tour stop."),
+  ("windance", "Windance Country Club", "Gulfport", "https://windancecc.com/", "light", "Coastal Junior Tour stop."),
+  ("shell-landing", "Shell Landing Golf Club", "Gautier", "https://www.shelllandinggolf.com/", "light", "Davis Love III design through the coastal marsh and a Coastal Junior Tour stop."),
+  ("hattiesburg", "Hattiesburg Country Club", "Hattiesburg", "https://www.hattiesburgcountryclub.com/", "light", "Coastal Junior Tour stop."),
+]
+
+def course_cards(pre):
+    out = []
+    for slug, name, city, url, bg, note in COURSES:
+        out.append(f'''<a class="course" href="{url}" target="_blank" rel="noopener">
+      <div class="course-logo {bg}"><img src="{pre}assets/courses/{slug}.png" alt="{name} logo" loading="lazy"></div>
+      <div class="course-body"><h3>{name}</h3><div class="role">{city}, Mississippi</div><p>{note}</p><span class="more">Visit website</span></div>
+    </a>''')
+    return '<div class="grid g3 courses">' + "\n    ".join(out) + '</div>'
+
+def course_strip(pre):
+    return '<div class="course-strip">' + "".join(f'<a class="course-logo {bg}" href="{pre}courses/index.html" title="{name}"><img src="{pre}assets/courses/{slug}.png" alt="{name}" loading="lazy"></a>' for slug, name, city, url, bg, note in COURSES) + '</div>'
 ACTION = ["cjt-01","cjt-02","cjt-03","cjt-04","cjt-05","cjt-06","cjt-07","cjt-08"]
 WINNERS = ["cjt-09","cjt-10","cjt-11","cjt-12"]
 
@@ -54,6 +79,7 @@ def page(title, desc, path, body, active=""):
     {nav('index.html#programs','Programs','programs')}
     {nav('coast-open/index.html','Coast Open','coast')}
     {nav('junior-tour/index.html','Junior Tour','cjt')}
+    {nav('courses/index.html','Host Courses','courses')}
     {nav('index.html#about','About','about')}
     {nav('index.html#contact','Contact','contact')}
     <a class="btn btn-orange nav-cta" href="{CO_REG}">Register</a>
@@ -129,7 +155,7 @@ home = f"""
     </div>
   </div>
   <div class="hero-emblem"><img src="assets/cga-emblem.png" alt="Coastal Golf Association emblem"></div>
-</div></section>
+</div><span class="photo-credit">Sunkist Country Club, Biloxi</span></section>
 
 <section><div class="wrap">
   {coast_band('')}
@@ -144,8 +170,8 @@ home = f"""
   <div class="grid g4">
     <div class="card feature"><div class="prog-logo"><img src="assets/coast-open-logo.png" alt="Coast Open logo"></div><div class="tag" style="color:#F4B596">Championship</div><h3>The Coast Open</h3><p>Our annual championship at Sunkist Country Club, with a professional purse and divisions for amateurs, seniors and juniors.</p><a class="more" href="coast-open/index.html">Coast Open</a></div>
     <div class="card"><div class="prog-logo"><img src="assets/logo-cjt.png" alt="Coastal Junior Tour logo"></div><div class="tag">Juniors</div><h3>Coastal Junior Tour</h3><p>Affordable, competitive tournaments for boys and girls at courses across the Gulf Coast, played under USGA rules.</p><a class="more" href="junior-tour/index.html">Junior Tour</a></div>
-    <div class="card"><div class="prog-logo"><img src="assets/logo-pga-jr-league.png" alt="PGA Jr. League logo"></div><div class="tag">Juniors</div><h3>PGA Jr. League</h3><p>Team golf for kids, with coaching from PGA Professionals and matches against other teams.</p><a class="more" href="#contact">Ask about teams</a></div>
-    <div class="card"><div class="prog-logo"><img src="assets/logo-pga-hope.png" alt="PGA HOPE logo"></div><div class="tag">Veterans</div><h3>PGA HOPE</h3><p>The PGA of America's golf program for military veterans, introducing golf to support physical, mental and social well-being.</p><a class="more" href="#contact">Get involved</a></div>
+    <div class="card"><div class="prog-logo"><img src="assets/logo-pga-jr-league.png" alt="PGA Jr. League logo"></div><div class="tag">Juniors</div><h3>PGA Jr. League</h3><p>Team golf for kids at Sunkist Country Club, coached by PGA Professionals, with matches against other teams.</p><a class="more" href="{JRL_SUNKIST}" target="_blank" rel="noopener">See Sunkist teams</a></div>
+    <div class="card"><div class="prog-logo"><img src="assets/logo-pga-hope.png" alt="PGA HOPE logo"></div><div class="tag">Veterans</div><h3>PGA HOPE</h3><p>The PGA of America's free golf program for veterans and active-duty military, introducing golf to support physical, mental and social well-being.</p><a class="more" href="{HOPE_LINK}" target="_blank" rel="noopener">Join a PGA HOPE session</a></div>
   </div>
 </div></section>
 
@@ -160,6 +186,12 @@ home = f"""
   <p class="note" style="margin-top:14px">More photos and videos on <a href="{IG}">Instagram</a> and <a href="{FB}">Facebook</a>.</p>
 </div></section>
 
+<section class="alt"><div class="wrap">
+  <div class="section-head"><div class="eyebrow">Thank you</div><h2>Our host courses</h2><p>CGA events are played at some of the best clubs on the Gulf Coast. We're grateful to every course that hosts our players.</p></div>
+  {course_strip('')}
+  <p style="margin-top:22px"><a class="btn btn-ghost" href="courses/index.html">Meet our host courses →</a></p>
+</div></section>
+
 <section id="about"><div class="wrap">
   <div class="grid g2" style="align-items:center;gap:48px">
     <div>
@@ -169,8 +201,8 @@ home = f"""
       <p>Today the CGA brings the Junior Tour, PGA Jr. League, PGA HOPE and the Coast Open together under one association.</p>
     </div>
     <div class="grid" style="gap:16px">
-      <div class="card person"><img class="headshot" src="assets/allan-martel.jpg" alt="Allan Martel, PGA"><div><h3>Allan Martel, PGA</h3><div class="role">Co-Founder · Tournament Director</div><p style="margin:0">PGA Class A Professional and owner of NeoGolf in D'Iberville and Ocean Springs.</p></div></div>
-      <div class="card person"><img class="headshot" src="assets/rory-nelson.jpg" alt="Rory Nelson, PGA"><div><h3>Rory Nelson, PGA</h3><div class="role">Co-Founder · Tournament Director</div><p style="margin:0">PGA Professional and General Manager of Sunkist Country Club.</p></div></div>
+      <div class="card person"><img class="headshot" src="assets/allan-martel.jpg" alt="Allan Martel, PGA"><div><h3>Allan Martel, PGA</h3><div class="role">Co-Founder · Tournament Director</div><p style="margin:0">PGA Class A Professional and owner of NeoGolf in D'Iberville and Ocean Springs.</p><a class="btn btn-navy lesson-btn" href="{ALLAN_PGA}" target="_blank" rel="noopener">Book a lesson →</a></div></div>
+      <div class="card person"><img class="headshot" src="assets/rory-nelson.jpg" alt="Rory Nelson, PGA"><div><h3>Rory Nelson, PGA</h3><div class="role">Co-Founder · Tournament Director</div><p style="margin:0">PGA Professional and General Manager of Sunkist Country Club.</p><a class="btn btn-navy lesson-btn" href="{RORY_PGA}" target="_blank" rel="noopener">Book a lesson →</a></div></div>
     </div>
   </div>
 </div></section>
@@ -343,12 +375,27 @@ cjt = f"""
 {contact_block('../')}
 """
 
+courses = f"""
+<section class="page-head">{CONTOURS}<div class="wrap">
+  <div class="eyebrow">Thank you</div>
+  <h1>Our host courses</h1>
+  <p>The Coast Open, the Coastal Junior Tour and our PGA programs are played at clubs across the Mississippi Gulf Coast and the Pine Belt. Thank you to every course, golf shop and grounds crew that makes room for our players.</p>
+</div></section>
+
+<section><div class="wrap">
+  {course_cards('../')}
+  <p class="note" style="margin-top:22px">Logos belong to each club and link to the club's own website. Want to host a CGA event? <a href="mailto:{EMAIL}?subject=Hosting%20a%20CGA%20event">Email us</a>.</p>
+</div></section>
+{contact_block('../')}
+"""
+
 notfound = f"""<section class="page-head"><div class="wrap"><h1>Page not found</h1><p>That page moved when we became the Coastal Golf Association.</p><div class="actions"><a class="btn btn-orange" href="/">Go to the home page</a><a class="btn btn-ghost" style="color:var(--cream)" href="/junior-tour/">Coastal Junior Tour</a></div></div></section>"""
 
 out = {
     "index.html": page("Coastal Golf Association · Mississippi Gulf Coast Golf", "The Coastal Golf Association runs the Coast Open, the Coastal Junior Tour, PGA Jr. League and PGA HOPE on the Mississippi Gulf Coast.", "index.html", home),
     "coast-open/index.html": page("2026 Coast Open presented by Galleria BMW · Nov 13–15 · Sunkist CC", "The 2026 Coast Open presented by Galleria BMW, November 13–15 at Sunkist Country Club in Biloxi. $10,000 minimum professional purse.", "coast-open/index.html", coast, "coast"),
     "junior-tour/index.html": page("Coastal Junior Tour · Coastal Golf Association", "Competitive, affordable junior golf tournaments along the Mississippi Gulf Coast, run by PGA Professionals.", "junior-tour/index.html", cjt, "cjt"),
+    "courses/index.html": page("Host Courses · Coastal Golf Association", "The golf clubs that host Coast Open, Coastal Junior Tour and PGA program events on the Mississippi Gulf Coast.", "courses/index.html", courses, "courses"),
     "404.html": page("Page not found · Coastal Golf Association", "Coastal Golf Association", "404.html", notfound),
 }
 for p, html in out.items():

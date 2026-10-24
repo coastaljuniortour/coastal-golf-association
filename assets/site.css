@@ -125,7 +125,7 @@ footer a{color:var(--muted)}
 @media(max-width:860px){.gallery{grid-template-columns:repeat(2,1fr)}}
 .sponsor img{max-width:220px;object-fit:contain}
 /* v3: course hero, program logos, headshots */
-.hero-course{background:linear-gradient(90deg,rgba(15,42,56,.95) 0%,rgba(21,54,71,.86) 50%,rgba(21,54,71,.5) 100%),url(photos/course-hero.jpg) center 40%/cover no-repeat}
+.hero-course{position:relative;background:linear-gradient(90deg,rgba(15,42,56,.94) 0%,rgba(21,54,71,.78) 48%,rgba(21,54,71,.25) 100%),url(photos/sunkist-bay.jpg) center 62%/cover no-repeat}
 .prog-logo{height:76px;border-radius:10px;background:var(--cream2);display:flex;align-items:center;justify-content:center;padding:10px;margin-bottom:18px}
 .prog-logo img{max-height:56px;max-width:80%;width:auto;object-fit:contain}
 .card.feature .prog-logo{background:#F2EBDD}
@@ -135,3 +135,24 @@ footer a{color:var(--muted)}
 .prog-logo img{max-height:60px}
 @media(max-width:480px){.card.person{flex-direction:column;align-items:flex-start}}
 .hero-emblem{overflow:hidden;border:6px solid rgba(243,244,213,.25);background-clip:padding-box}.hero-emblem img{width:72%}
+
+/* v4: host courses, lessons, photo credit */
+.photo-credit{position:absolute;right:16px;bottom:10px;font:600 .7rem Inter,sans-serif;letter-spacing:.08em;color:rgba(243,244,213,.8);text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.lesson-btn{margin-top:14px;padding:10px 18px;font-size:.88rem}
+.courses{gap:22px}
+.course{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s}
+.course:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(21,54,71,.12)}
+.course-logo{display:flex;align-items:center;justify-content:center;height:150px;padding:22px}
+.course-logo.navy{background:var(--navy)}
+.course-logo.light{background:var(--cream2);border-bottom:1px solid var(--line)}
+.course-logo img{max-height:100%;max-width:78%;width:auto;object-fit:contain}
+.course-body{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
+.course-body h3{margin-bottom:.15em}
+.course-body .role{font-size:.9rem;color:var(--orange-d);font-weight:700;margin-bottom:.6em}
+.course-body p{color:var(--muted)}
+.course-body .more{margin-top:auto;font-weight:700;color:var(--navy)}
+.course-body .more:after{content:" ↗"}
+.course-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.course-strip .course-logo{height:96px;padding:14px;border-radius:12px;border:1px solid var(--line)}
+@media(max-width:860px){.course-strip{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:480px){.course-strip{grid-template-columns:repeat(2,1fr)}}
