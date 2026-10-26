@@ -156,3 +156,28 @@ footer a{color:var(--muted)}
 .course-strip .course-logo{height:96px;padding:14px;border-radius:12px;border:1px solid var(--line)}
 @media(max-width:860px){.course-strip{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:480px){.course-strip{grid-template-columns:repeat(2,1fr)}}
+/* junior tour page */
+.hero-cjt{background:linear-gradient(90deg,rgba(15,42,56,.95) 0%,rgba(21,54,71,.82) 55%,rgba(21,54,71,.45) 100%),url(photos/cjt-tee-ball.jpg) center 60%/cover no-repeat}
+.hero-cjt-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:36px;align-items:center}
+.hero-cjt-logo{background:var(--cream);border-radius:50%;aspect-ratio:1;max-width:260px;margin-left:auto;display:flex;align-items:center;justify-content:center;padding:34px;box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.hero-cjt-logo img{width:100%;height:auto}
+@media(max-width:760px){.hero-cjt-grid{grid-template-columns:1fr}.hero-cjt-logo{max-width:160px;margin:0;padding:22px}}
+.stats-band{background:var(--orange);padding:22px 0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center}
+.stats b{display:block;font:800 1.6rem "Playfair Display",serif;color:var(--navy)}
+.stats span{font:600 .85rem Inter,sans-serif;color:#2b2b2b}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+.side-photo{margin:24px 0 0;border-radius:var(--radius);overflow:hidden;max-height:420px}
+.side-photo img{width:100%;height:420px;object-fit:cover;object-position:center 30%;display:block}
+.pathway-head{display:grid;grid-template-columns:150px 1fr;gap:32px;align-items:center}
+.pathway-head img{width:150px;height:auto}
+@media(max-width:640px){.pathway-head{grid-template-columns:1fr}.pathway-head img{width:110px}}
+.tee-dot{display:inline-block;width:12px;height:12px;border-radius:50%;border:1px solid #888;margin-right:8px;vertical-align:-1px}
+.sched-course{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.sched-course .sub{display:block}
+.course-logo.mini{width:64px;height:40px;padding:5px 7px;border-radius:8px;flex:none;display:flex;align-items:center;justify-content:center}
+.course-logo.mini img{max-width:100%;max-height:100%;width:auto;height:auto}
+.sponsor.title{flex:0 1 420px;margin:0 auto;border:2px solid var(--orange)}
+.sponsor.title img{height:90px}
+.sponsor.dark{background:var(--navy)}.sponsor.dark small{color:#F4B596}
+#faq details,#policies details{margin-bottom:10px}
