@@ -181,3 +181,21 @@ footer a{color:var(--muted)}
 .sponsor.title img{height:90px}
 .sponsor.dark{background:var(--navy)}.sponsor.dark small{color:#F4B596}
 #faq details,#policies details{margin-bottom:10px}
+/* 2026 Coast Open wrap-up */
+.wrapup{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:0;background:var(--white);border:1px solid var(--line);border-radius:22px;overflow:hidden;align-items:stretch}
+.wrapup-img{margin:0}
+.wrapup-img img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+.wrapup-text{padding:44px;display:flex;flex-direction:column;justify-content:center}
+.wrapup-text h2{margin-top:6px}
+.actions-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.champs-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;align-items:start}
+.champs-grid .wrapup-img img{border-radius:18px}
+.table.champs td.price{font-variant-numeric:tabular-nums}
+.strip-img{display:block;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+.strip-img img{display:block;width:100%;height:auto}
+.signoff{display:flex;align-items:center;gap:28px;justify-content:center;text-align:left;padding:10px 0}
+.signoff img{width:120px;height:auto;flex:none}
+.signoff p{margin:0 0 6px;color:var(--muted)}
+.signoff b{color:var(--navy);font-size:1.05rem}
+@media(max-width:860px){.wrapup,.champs-grid{grid-template-columns:1fr}.wrapup-text{padding:28px}}
+@media(max-width:560px){.signoff{flex-direction:column;text-align:center;gap:16px}.table.champs th,.table.champs td{padding:12px 10px;font-size:.95rem}}
